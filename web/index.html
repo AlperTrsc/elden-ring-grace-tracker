@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elden Ring - Sites of Grace Gezgini & Haritası</title>
+  <meta name="description" content="Elden Ring ve Shadow of the Erdtree'deki tüm 400+ Lütuf Noktalarını (Sites of Grace) keşfedin, interaktif harita üzerinde takip edin ve oyun ilerlemenizi kaydedin.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Embers Canvas Background -->
+  <canvas id="embers-canvas"></canvas>
+
+  <div class="app-layout">
+    <!-- Top Navigation & Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="grace-rune-icon">✦</div>
+        <div>
+          <h1 class="brand-title">ELDEN RING</h1>
+          <p class="brand-subtitle">SITES OF GRACE • LÜTUF GEZGİNİ</p>
+        </div>
+      </div>
+
+      <!-- Overall Progress Summary -->
+      <div class="header-progress-box">
+        <div class="progress-info">
+          <span class="progress-label">Toplam Keşif</span>
+          <span class="progress-count" id="stat-total-count">0 / 408</span>
+          <span class="progress-pct" id="stat-total-pct">%0.0</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="stat-total-bar" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- View Switcher -->
+      <nav class="view-nav">
+        <button class="nav-btn active" id="btn-view-map" data-view="map">
+          <span class="btn-icon">🗺️</span>
+          <span>İnteraktif Harita</span>
+        </button>
+        <button class="nav-btn" id="btn-view-list" data-view="list">
+          <span class="btn-icon">📜</span>
+          <span>Lütuf Listesi</span>
+        </button>
+        <button class="nav-btn" id="btn-view-stats" data-view="stats">
+          <span class="btn-icon">📊</span>
+          <span>İlerleme Raporu</span>
+        </button>
+      </nav>
+
+      <!-- Audio & Save Controls -->
+      <div class="header-actions">
+        <button class="icon-btn" id="btn-audio-toggle" title="Lütuf Sesi Aç/Kapat">
+          <span id="audio-icon">🔔</span>
+        </button>
+        <button class="btn btn-gold-sm" id="btn-save-manual" title="İlerlemeyi Kaydet">
+          💾 Kaydet
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+      
+      <!-- ==================== VIEW 1: MAP VIEW ==================== -->
+      <section class="view-panel active" id="view-map">
+        <div class="map-controls-bar">
+          <div class="realm-tabs" id="map-realm-tabs">
+            <button class="tab-btn active" data-realm="The Lands Between">👑 Ara Topraklar (312 Lütuf)</button>
+            <button class="tab-btn" data-realm="Shadow of the Erdtree">🌑 Gölge Diyarı DLC (96 Lütuf)</button>
+          </div>
+
+          <div class="map-mode-tabs" id="map-mode-tabs">
+            <button class="tab-btn active" id="btn-mode-real" data-mode="real">🗺️ Orijinal Oyun Haritası</button>
+            <button class="tab-btn" id="btn-mode-parchment" data-mode="parchment">📜 Parşömen Harita</button>
+          </div>
+
+          <div class="map-quick-filters">
+            <div class="search-wrap-mini">
+              <input type="text" id="map-search-input" placeholder="Haritada ara...">
+            </div>
+
+            <!-- Discoverable Content Layer Filters -->
+            <div class="layer-filters-group">
+              <label class="layer-toggle-btn active" title="Lütuf Noktalarını Göster/Gizle">
+                <input type="checkbox" id="toggle-layer-graces" checked>
+                <span class="layer-chip chip-grace">🌟 Lütuflar</span>
+              </label>
+              <label class="layer-toggle-btn active" title="Boss Arenaları & Zindan Bosslarını Göster/Gizle">
+                <input type="checkbox" id="toggle-layer-bosses" checked>
+                <span class="layer-chip chip-boss">⚔️ Bosslar</span>
+              </label>
+              <label class="layer-toggle-btn active" title="Özel Eklenen Keşifleri Göster/Gizle">
+                <input type="checkbox" id="toggle-layer-custom" checked>
+                <span class="layer-chip chip-custom">📍 Keşiflerim</span>
+              </label>
+              <label class="layer-toggle-btn" title="Keşfedilmemiş içerikleri haritada göster">
+                <input type="checkbox" id="map-toggle-undiscovered" checked>
+                <span class="layer-chip chip-undisc">👁️ Keşfedilmemişler</span>
+              </label>
+            </div>
+
+            <!-- Content Creation & Management Actions -->
+            <div class="marker-action-buttons">
+              <button class="btn btn-gold-sm" id="btn-add-marker-mode" title="Haritada istediğiniz bir noktaya tıklayarak yeni keşif veya işaret ekleyin">
+                <span class="btn-icon">➕</span>
+                <span>İşaret Ekle</span>
+              </button>
+              <button class="btn btn-outline-sm" id="btn-manage-custom-markers" title="Eklediğiniz tüm özel işaretleri görüntüleyin ve yönetin">
+                <span>📋 İşaretlerim</span>
+                <span class="badge-count" id="custom-marker-count">0</span>
+              </button>
+            </div>
+
+            <div class="zoom-controls">
+              <button class="zoom-btn" id="btn-zoom-in" title="Yakınlaştır">+</button>
+              <button class="zoom-btn" id="btn-zoom-out" title="Uzaklaştır">−</button>
+              <button class="zoom-btn" id="btn-zoom-reset" title="Sıfırla">⟲</button>
+              <button class="zoom-btn" id="btn-fullscreen-map" title="Tam Ekran">⛶</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add Marker Mode Floating Banner -->
+        <div class="add-marker-banner" id="add-marker-banner" style="display: none;">
+          <div class="banner-content">
+            <span class="banner-icon">📍</span>
+            <span><strong>İşaret Ekleme Modu Aktif:</strong> Haritada işaretlemek istediğiniz herhangi bir noktaya tıklayın.</span>
+          </div>
+          <button class="btn btn-subtle-sm" id="btn-cancel-add-marker-mode">İptal (Esc)</button>
+        </div>
+
+        <div class="map-viewport" id="map-viewport">
+          <div class="map-world" id="map-world">
+            <!-- Real In-Game Map Image Layer -->
+            <img id="map-image-layer" class="map-image-layer" src="assets/map_lands_between.jpg" alt="Elden Ring Haritası" draggable="false">
+
+            <!-- Stylized Canvas Map Layer (Parchment mode) -->
+            <canvas id="map-canvas" class="map-canvas-layer"></canvas>
+            
+            <!-- Pin Overlays -->
+            <div class="pins-container" id="pins-container"></div>
+          </div>
+
+          <!-- Map Legend / Quick Info Overlay -->
+          <div class="map-legend">
+            <div class="legend-header">✦ HARİTA REHBERİ</div>
+            <div class="legend-item"><span class="legend-dot disc"></span> Keşfedildi (Işık Sütunu)</div>
+            <div class="legend-item"><span class="legend-dot undisc"></span> Keşfedilmedi (Kıvılcım)</div>
+            <div class="legend-item"><span class="legend-dot boss"></span> Boss Arenası Lütfu</div>
+            <div class="legend-hint">Sürükleyerek gezin, tekerlekle yakınlaştırın. Pine tıklayarak detayları açın.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 2: LIST / CARD EXPLORER ==================== -->
+      <section class="view-panel" id="view-list">
+        <div class="explorer-filter-panel">
+          <!-- Row 1: Search & Status Filters -->
+          <div class="filter-row">
+            <div class="search-box">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="list-search-input" placeholder="Lütuf adı, bölge, zindan veya boss ara... (Kısayol: /)">
+              <button class="clear-search-btn" id="btn-clear-search" style="display:none;">✕</button>
+            </div>
+
+            <!-- Realm Filter -->
+            <div class="filter-group">
+              <span class="filter-label">Diyar:</span>
+              <div class="filter-pills" id="pills-realm">
+                <button class="pill active" data-realm="all">Tümü</button>
+                <button class="pill" data-realm="The Lands Between">Ara Topraklar</button>
+                <button class="pill" data-realm="Shadow of the Erdtree">Gölge Diyarı (DLC)</button>
+              </div>
+            </div>
+
+            <!-- Discovery Status Filter -->
+            <div class="filter-group">
+              <span class="filter-label">Durum:</span>
+              <div class="filter-pills" id="pills-status">
+                <button class="pill active" data-status="all">Tümü</button>
+                <button class="pill" data-status="discovered">✓ Keşfedildi</button>
+                <button class="pill" data-status="undiscovered">○ Keşfedilmedi</button>
+                <button class="pill" data-status="favorite">★ Favoriler</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: Region Select & Type Filters -->
+          <div class="filter-row">
+            <div class="filter-group region-select-wrap">
+              <span class="filter-label">Bölge:</span>
+              <select id="select-region" class="filter-select">
+                <option value="all">Tüm Bölgeler (Tümü)</option>
+              </select>
+            </div>
+
+            <!-- Grace Type Filter -->
+            <div class="filter-group">
+              <span class="filter-label">Tür:</span>
+              <div class="filter-pills" id="pills-type">
+                <button class="pill active" data-type="all">Tüm Türler</button>
+                <button class="pill" data-type="Overworld">Açık Dünya</button>
+                <button class="pill" data-type="Legacy Dungeon">Ana Zindan</button>
+                <button class="pill" data-type="Dungeon">Zindan / Mağara</button>
+                <button class="pill" data-type="Underground">Yeraltı</button>
+                <button class="pill" data-type="Boss">Boss Arenası</button>
+              </div>
+            </div>
+
+            <!-- Batch Actions -->
+            <div class="filter-group batch-actions">
+              <button class="btn btn-subtle-sm" id="btn-batch-discover-filtered" title="Mevcut filtrelenmiş lütufları keşfet">
+                ✓ Filtreleneni Keşfet
+              </button>
+              <button class="btn btn-subtle-sm" id="btn-batch-reset-filtered" title="Mevcut filtrelenmiş lütufları sıfırla">
+                ⟲ Filtreleneni Sıfırla
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards Counter & Sort Bar -->
+        <div class="cards-meta-bar">
+          <span class="results-count" id="cards-results-count">408 Lütuf gösteriliyor</span>
+          <div class="sort-wrap">
+            <label for="select-sort">Sıralama:</label>
+            <select id="select-sort" class="filter-select-sm">
+              <option value="default">Varsayılan İlerleme</option>
+              <option value="name-asc">İsim (A-Z)</option>
+              <option value="name-desc">İsim (Z-A)</option>
+              <option value="region">Bölgeye Göre</option>
+              <option value="status">Keşif Durumuna Göre</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="cards-grid" id="cards-grid">
+          <!-- Rendered dynamically via app.js -->
+        </div>
+
+        <div class="empty-state" id="empty-state" style="display:none;">
+          <div class="empty-icon">🕯️</div>
+          <h3>Aramanızla eşleşen Lütuf bulunamadı</h3>
+          <p>Filtreleri sıfırlayarak veya arama teriminizi değiştirerek tekrar deneyin.</p>
+          <button class="btn btn-gold" id="btn-reset-filters">Filtreleri Sıfırla</button>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 3: STATS / DASHBOARD ==================== -->
+      <section class="view-panel" id="view-stats">
+        <div class="stats-container">
+          <!-- Top Metric Cards -->
+          <div class="metrics-grid">
+            <div class="metric-card gold-glow">
+              <div class="metric-icon">👑</div>
+              <div class="metric-content">
+                <span class="metric-title">Toplam Keşfedilen Lütuf</span>
+                <span class="metric-value" id="dash-total-val">0 / 408</span>
+                <span class="metric-sub" id="dash-total-pct">%0.0 Tamamlandı</span>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon">🗺️</div>
+              <div class="metric-content">
+                <span class="metric-title">Ara Topraklar (Base Game)</span>
+                <span class="metric-value" id="dash-base-val">0 / 312</span>
+                <span class="metric-sub" id="dash-base-pct">%0.0 Tamamlandı</span>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon">🌑</div>
+              <div class="metric-content">
+                <span class="metric-title">Gölge Diyarı (Shadow of Erdtree)</span>
+                <span class="metric-value" id="dash-dlc-val">0 / 96</span>
+                <span class="metric-sub" id="dash-dlc-pct">%0.0 Tamamlandı</span>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon">⚔️</div>
+              <div class="metric-content">
+                <span class="metric-title">Boss Arenası Lütfu</span>
+                <span class="metric-value" id="dash-boss-val">0 / 16</span>
+                <span class="metric-sub" id="dash-boss-pct">%0.0 Tamamlandı</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Region Breakdown -->
+          <div class="section-box">
+            <div class="section-header">
+              <h2 class="section-title">✦ Bölgelere Göre Lütuf Keşif Oranları</h2>
+              <span class="section-badge">32 Bölge</span>
+            </div>
+            <div class="regions-progress-grid" id="regions-progress-grid">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Data Backup & Reset Actions -->
+          <div class="section-box">
+            <div class="section-header">
+              <h2 class="section-title">💾 İlerleme Kaydı & Yedekleme (Tarnished Save State)</h2>
+            </div>
+            <div class="backup-actions-row">
+              <div class="backup-desc">
+                İlerlemeniz otomatik olarak sunucuya (<code>user_progress.json</code>) kaydedilir. Ayrıca JSON dosyası olarak bilgisayarınıza indirebilir veya başka bir bilgisayardan içe aktarabilirsiniz.
+              </div>
+              <div class="backup-buttons">
+                <button class="btn btn-gold" id="btn-export-save">📤 İlerlemeyi Dışa Aktar (JSON)</button>
+                <label class="btn btn-subtle" for="input-import-save" style="margin:0; cursor:pointer;">
+                  📥 İlerlemeyi İçe Aktar
+                </label>
+                <input type="file" id="input-import-save" accept=".json" style="display:none;">
+                <button class="btn btn-danger" id="btn-reset-all">⚠️ Tüm İlerlemeyi Sıfırla</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Detailed Grace Modal / Drawer -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="grace-drawer" id="grace-drawer">
+      <button class="drawer-close-btn" id="btn-close-drawer">✕</button>
+
+      <div class="drawer-header">
+        <div class="drawer-grace-icon">✦</div>
+        <div class="drawer-title-box">
+          <span class="drawer-realm-tag" id="drawer-realm">Ara Topraklar</span>
+          <h2 class="drawer-name" id="drawer-name">The First Step</h2>
+          <span class="drawer-region-tag" id="drawer-region">Limgrave • İlk Adım</span>
+        </div>
+      </div>
+
+      <div class="drawer-badges">
+        <span class="type-badge" id="drawer-type">Açık Dünya Lütfu</span>
+        <span class="status-badge" id="drawer-status">○ Keşfedilmedi</span>
+      </div>
+
+      <div class="drawer-body">
+        <div class="drawer-section">
+          <h3>✦ Bölge & Konum Bilgisi</h3>
+          <p id="drawer-desc" class="drawer-text">Açıklama yükleniyor...</p>
+          <div class="drawer-coords" id="drawer-coords">Harita Koordinatları: X: 52%, Y: 74%</div>
+        </div>
+
+        <div class="drawer-section">
+          <h3>📝 Kişisel Notlarınız</h3>
+          <textarea id="drawer-notes" class="drawer-textarea" placeholder="Bu lütuf için not ekleyin (örn: Gece süvarisi burada, NPC görevi vb.)..."></textarea>
+          <div class="notes-status" id="notes-status">Değişiklikler otomatik kaydedilir.</div>
+        </div>
+
+        <div class="drawer-actions">
+          <button class="btn btn-gold-lg" id="drawer-btn-toggle-disc">
+            ✦ Keşfedildi Olarak İşaretle
+          </button>
+          <button class="btn btn-subtle" id="drawer-btn-toggle-fav">
+            ☆ Favorilere Ekle
+          </button>
+          <button class="btn btn-outline" id="drawer-btn-edit-custom" style="display:none;">
+            ✏️ İşareti Düzenle
+          </button>
+          <button class="btn btn-danger" id="drawer-btn-delete-custom" style="display:none;">
+            🗑️ Haritadan Kaldır / Sil
+          </button>
+          <a href="#" target="_blank" class="btn btn-outline" id="drawer-btn-wiki">
+            📖 Fandom Wiki'de Aç ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Yeni Keşif / İşaret Ekle / Düzenle -->
+  <div class="modal-backdrop custom-modal-backdrop" id="modal-marker-backdrop" style="display: none;">
+    <div class="custom-marker-modal">
+      <div class="modal-header">
+        <h3 id="modal-marker-title-heading">✦ YENİ KEŞİF / İŞARET EKLE</h3>
+        <button class="modal-close-btn" id="btn-close-marker-modal">✕</button>
+      </div>
+      <form id="form-custom-marker" class="modal-form">
+        <input type="hidden" id="marker-form-id" value="">
+        <input type="hidden" id="marker-form-x" value="50">
+        <input type="hidden" id="marker-form-y" value="50">
+        <input type="hidden" id="marker-form-realm" value="The Lands Between">
+
+        <div class="form-group">
+          <label for="marker-form-title">İşaret / Keşif Adı *</label>
+          <input type="text" id="marker-form-title" class="form-input" placeholder="Örn: Madenci Mağarası Girişi, Gece Süvarisi, Sandık..." required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="marker-form-category">Kategori / Tür</label>
+            <select id="marker-form-category" class="form-select">
+              <option value="grace">🌟 Lütuf Noktası (Özel)</option>
+              <option value="boss">⚔️ Boss / Güçlü Düşman</option>
+              <option value="dungeon">🗝️ Zindan / Mağara / Katakomp</option>
+              <option value="treasure">💎 Hazine / Eşya / Sandık</option>
+              <option value="npc">👤 NPC / Tüccar</option>
+              <option value="secret">🔍 Gizem / İllüzyon Duvarı</option>
+              <option value="note">📝 Not / Rehber İpucu</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="marker-form-region">Bölge</label>
+            <input type="text" id="marker-form-region" class="form-input" placeholder="Örn: Limgrave, Altus..." value="Limgrave">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>İşaret Rengi</label>
+          <div class="color-palette" id="marker-color-palette">
+            <button type="button" class="color-swatch active" data-color="#ecbd4a" style="background:#ecbd4a;" title="Altın"></button>
+            <button type="button" class="color-swatch" data-color="#e24a4a" style="background:#e24a4a;" title="Kırmızı"></button>
+            <button type="button" class="color-swatch" data-color="#38bdf8" style="background:#38bdf8;" title="Mavi"></button>
+            <button type="button" class="color-swatch" data-color="#10b981" style="background:#10b981;" title="Zümrüt Yeşili"></button>
+            <button type="button" class="color-swatch" data-color="#a855f7" style="background:#a855f7;" title="Mor"></button>
+            <button type="button" class="color-swatch" data-color="#f97316" style="background:#f97316;" title="Turuncu"></button>
+          </div>
+          <input type="hidden" id="marker-form-color" value="#ecbd4a">
+        </div>
+
+        <div class="form-group">
+          <label for="marker-form-notes">Kişisel Not / Açıklama</label>
+          <textarea id="marker-form-notes" class="form-textarea" rows="3" placeholder="Örn: İkinci kattaki gizli sandıkta Demir Parşömen var..."></textarea>
+        </div>
+
+        <div class="coords-indicator">
+          <span>📍 Konum:</span>
+          <span id="marker-coords-readout" class="coords-pill">X: 38.0%, Y: 79.8%</span>
+        </div>
+
+        <div class="form-checkbox-group">
+          <label class="toggle-label">
+            <input type="checkbox" id="marker-form-discovered">
+            <span>Keşfedildi / Temizlendi olarak işaretle</span>
+          </label>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-subtle" id="btn-cancel-marker-form">İptal</button>
+          <button type="submit" class="btn btn-gold-lg" id="btn-submit-marker-form">💾 Haritaya Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Eklenen Tüm Özel İşaretleri Yönet -->
+  <div class="modal-backdrop custom-modal-backdrop" id="modal-manage-backdrop" style="display: none;">
+    <div class="manage-markers-modal">
+      <div class="modal-header">
+        <h3>✦ ÖZEL İŞARETLERİMİ YÖNET</h3>
+        <button class="modal-close-btn" id="btn-close-manage-modal">✕</button>
+      </div>
+      <div class="manage-markers-body">
+        <div class="manage-markers-header-bar">
+          <span id="manage-markers-count-label">Toplam 0 özel işaret</span>
+          <button class="btn btn-danger-sm" id="btn-clear-all-custom-markers">Tüm İşaretleri Sil</button>
+        </div>
+        <div class="manage-markers-list" id="manage-markers-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1694 @@
+[
+  {
+    "id": "boss-10000800",
+    "name": "Godrick the Grafted",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 31.84,
+      "y": 70.1
+    },
+    "runes": 20000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-10000850",
+    "name": "Margit, the Fell Omen",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 34.07,
+      "y": 74.08
+    },
+    "runes": 12000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-11000800",
+    "name": "Morgott, the Omen King",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 46.92,
+      "y": 40.97
+    },
+    "runes": 120000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-11000850",
+    "name": "Godfrey, First Elden Lord",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 44.88,
+      "y": 40.23
+    },
+    "runes": 80000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-11050850",
+    "name": "Sir Gideon Ofnir, the All-Knowing",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 44.87,
+      "y": 40.23
+    },
+    "runes": 150000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-12010800",
+    "name": "Dragonkin Soldier of Nokstella",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 22.44,
+      "y": 48.58
+    },
+    "runes": 12000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-12010850",
+    "name": "Dragonkin Soldier",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 22.12,
+      "y": 52.55
+    },
+    "runes": 58000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-12020800",
+    "name": "Valiant Gargoyle",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 51.97,
+      "y": 67.93
+    },
+    "runes": 30000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-12020850",
+    "name": "Mimic Tear",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 49.71,
+      "y": 76.45
+    },
+    "runes": 10000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-12030800",
+    "name": "Fia's Champion",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 45.86,
+      "y": 33.85
+    },
+    "runes": 40000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-12030850",
+    "name": "Lichdragon Fortissax",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 45.05,
+      "y": 34.6
+    },
+    "runes": 90000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-12040800",
+    "name": "Astel, Naturalborn of the Void",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 16.08,
+      "y": 66.63
+    },
+    "runes": 80000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-12050800",
+    "name": "Mohg, Lord of Blood",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 57.24,
+      "y": 73.78
+    },
+    "runes": 420000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-13000800",
+    "name": "Maliketh, the Black Blade",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 71.76,
+      "y": 27.88
+    },
+    "runes": 220000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-13000830",
+    "name": "Dragonlord Placidusax",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 69.89,
+      "y": 28.37
+    },
+    "runes": 280000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-13000850",
+    "name": "Godskin Duo",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 69.7,
+      "y": 27.53
+    },
+    "runes": 170000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-14000800",
+    "name": "Rennala, Queen of the Full Moon",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 19.31,
+      "y": 52.32
+    },
+    "runes": 40000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-14000850",
+    "name": "Red Wolf of Radagon",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 20.14,
+      "y": 54.48
+    },
+    "runes": 14000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-15000800",
+    "name": "Malenia, Blade of Miquella",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 57.44,
+      "y": 9.67
+    },
+    "runes": 480000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-15000850",
+    "name": "Loretta, Knight of the Haligtree",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 59.5,
+      "y": 11.51
+    },
+    "runes": 200000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-16000800",
+    "name": "Rykard, Lord of Blasphemy",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 23.45,
+      "y": 32.04
+    },
+    "runes": 130000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-16000850",
+    "name": "Godskin Noble",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 23.13,
+      "y": 33.05
+    },
+    "runes": 50000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-16000860",
+    "name": "Abductor Virgin (Swinging Sickle)",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 24.85,
+      "y": 33.48
+    },
+    "runes": 10000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-18000800",
+    "name": "Ulcerated Tree Spirit",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 39.97,
+      "y": 79.69
+    },
+    "runes": 15000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-18000850",
+    "name": "Soldier of Godrick",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 39.25,
+      "y": 79.83
+    },
+    "runes": 400,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-20000800",
+    "name": "Divine Beast Dancing Lion",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 22.89,
+      "y": 53.68
+    },
+    "runes": 120000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-20010800",
+    "name": "Radahn, Consort of Miquella",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 17.72,
+      "y": 52.78
+    },
+    "runes": 500000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-20010850",
+    "name": "Needle Knight Leda",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 19.24,
+      "y": 56.33
+    },
+    "runes": 0,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-21000850",
+    "name": "Golden Hippopotamus",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 57.44,
+      "y": 9.67
+    },
+    "runes": 200000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-21010800",
+    "name": "Base Serpent Messmer",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 59.5,
+      "y": 11.51
+    },
+    "runes": 400000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-22000800",
+    "name": "Putrescent Knight",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 49.27,
+      "y": 92.99
+    },
+    "runes": 220000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-25000800",
+    "name": "Metyr, Mother of Fingers",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 50.98,
+      "y": 29.3
+    },
+    "runes": 420000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-28000800",
+    "name": "Midra, Lord of Frenzied Flame",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 49.87,
+      "y": 71.88
+    },
+    "runes": 410000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-30000800",
+    "name": "Cemetery Shade",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 40.82,
+      "y": 86.79
+    },
+    "runes": 2200,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-30010800",
+    "name": "Erdtree Burial Watchdog",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 45.7,
+      "y": 86.42
+    },
+    "runes": 2400,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-30030800",
+    "name": "Spiritcaller Snail",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 15.4,
+      "y": 59.46
+    },
+    "runes": 3000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-30040800",
+    "name": "Grave Warden Duelist",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 40.58,
+      "y": 72.54
+    },
+    "runes": 1700,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-30050850",
+    "name": "Black Knife Assassin",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 27.94,
+      "y": 45.65
+    },
+    "runes": 4200,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-30080800",
+    "name": "Ancient Hero of Zamor",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 36.35,
+      "y": 34.57
+    },
+    "runes": 20000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-30090800",
+    "name": "Red Wolf of the Champion",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 23.48,
+      "y": 30.89
+    },
+    "runes": 21000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-30100800",
+    "name": "Crucible Knight Ordovis",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 44.93,
+      "y": 33.77
+    },
+    "runes": 28000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-30120800",
+    "name": "Misbegotten Warrior",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 22.45,
+      "y": 34.94
+    },
+    "runes": 9400,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-30140800",
+    "name": "Erdtree Burial Watchdog (Sword)",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 50.05,
+      "y": 68.42
+    },
+    "runes": 7400,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-30160800",
+    "name": "Putrid Tree Spirit",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 63.16,
+      "y": 66.25
+    },
+    "runes": 64000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-30190800",
+    "name": "Putrid Grave Warden Duelist",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 59.91,
+      "y": 28.13
+    },
+    "runes": 78000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31000800",
+    "name": "Patches",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 39.35,
+      "y": 75.92
+    },
+    "runes": 0,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31010800",
+    "name": "Runebear",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 41.94,
+      "y": 86.31
+    },
+    "runes": 2600,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31020800",
+    "name": "Miranda Blossom",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 36.95,
+      "y": 87.49
+    },
+    "runes": 2100,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31030800",
+    "name": "Beastman of Farum Azula",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 36.92,
+      "y": 75.51
+    },
+    "runes": 1000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31040800",
+    "name": "Cleanrot Knight",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 31.27,
+      "y": 69.86
+    },
+    "runes": 3300,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31050800",
+    "name": "Bloodhound Knight",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 23.29,
+      "y": 65.48
+    },
+    "runes": 3600,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31060800",
+    "name": "Crystalian (Staff)",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 19.07,
+      "y": 53.03
+    },
+    "runes": 3300,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31070800",
+    "name": "Kindred of Rot",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 23.69,
+      "y": 29.12
+    },
+    "runes": 10000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31090800",
+    "name": "Demi-Human Queen Margot",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 24.34,
+      "y": 27.2
+    },
+    "runes": 11000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31100800",
+    "name": "Beastman of Farum Azula (Cleaver)",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 62.16,
+      "y": 67.85
+    },
+    "runes": 65000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31110800",
+    "name": "Putrid Crystalian (Spear)",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 57.71,
+      "y": 69.36
+    },
+    "runes": 7100,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31120800",
+    "name": "Misbegotten Crusader",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 58.97,
+      "y": 22.39
+    },
+    "runes": 93000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31150800",
+    "name": "Demi-Human Chief",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 35.84,
+      "y": 80.25
+    },
+    "runes": 1200,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31170800",
+    "name": "Guardian Golem",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 41.55,
+      "y": 69.22
+    },
+    "runes": 1700,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31180800",
+    "name": "Miranda the Blighted Bloom",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 34.56,
+      "y": 35.53
+    },
+    "runes": 8400,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31190850",
+    "name": "Necromancer Garris",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 26.11,
+      "y": 35.21
+    },
+    "runes": 9000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31200800",
+    "name": "Cleanrot Knight (Spear)",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 55.66,
+      "y": 69.21
+    },
+    "runes": 7000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-31210800",
+    "name": "Frenzied Duelist",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 49.63,
+      "y": 72.99
+    },
+    "runes": 6700,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-32000800",
+    "name": "Scaly Misbegotten",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 41.65,
+      "y": 87.76
+    },
+    "runes": 2000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-32010800",
+    "name": "Stonedigger Troll",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 38.43,
+      "y": 76.4
+    },
+    "runes": 1800,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-32020800",
+    "name": "Crystalian",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 25.13,
+      "y": 48.4
+    },
+    "runes": 3000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-32050800",
+    "name": "Crystalian (Ringblade)",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 36.11,
+      "y": 35.1
+    },
+    "runes": 9000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-32070800",
+    "name": "Magma Wyrm",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 48.44,
+      "y": 69.07
+    },
+    "runes": 7500,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-32080800",
+    "name": "Fallingstar Beast",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 55.8,
+      "y": 68.32
+    },
+    "runes": 7600,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-32110800",
+    "name": "Astel, Stars of Darkness",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 51.82,
+      "y": 25.45
+    },
+    "runes": 120000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-34120800",
+    "name": "Onyx Lord",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 40.28,
+      "y": 42.4
+    },
+    "runes": 16000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-34130800",
+    "name": "Godskin Apostle",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 57.37,
+      "y": 66.38
+    },
+    "runes": 94000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-34140850",
+    "name": "Fell Twin",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 52.11,
+      "y": 39.52
+    },
+    "runes": 29000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-35000800",
+    "name": "Mohg, the Omen",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 46.99,
+      "y": 36.91
+    },
+    "runes": 100000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-35000850",
+    "name": "Esgar, Priest of Blood",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 44.13,
+      "y": 39.36
+    },
+    "runes": 30000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-39200800",
+    "name": "Magma Wyrm Makar",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 24.41,
+      "y": 39.12
+    },
+    "runes": 24000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-40000800",
+    "name": "Death Knight",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 29.26,
+      "y": 44.44
+    },
+    "runes": 110000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-41000800",
+    "name": "Demi-Human Swordmaster Onze",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 23.17,
+      "y": 57.24
+    },
+    "runes": 80000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-41010800",
+    "name": "Curseblade Labirith",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 52.31,
+      "y": 56.62
+    },
+    "runes": 100000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-41020800",
+    "name": "Lamenter",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 36.7,
+      "y": 73.14
+    },
+    "runes": 160000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-43000800",
+    "name": "Chief Bloodfiend",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 36.29,
+      "y": 50.86
+    },
+    "runes": 80000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-43010800",
+    "name": "Ancient Dragon-Man",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 45.85,
+      "y": 67.93
+    },
+    "runes": 130000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1033420800",
+    "name": "Alecto, Black Knife Ringleader",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 14.06,
+      "y": 61.56
+    },
+    "runes": 80000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1033430800",
+    "name": "Erdtree Avatar",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 14.92,
+      "y": 59.41
+    },
+    "runes": 5800,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1033450800",
+    "name": "Bols, Carian Knight",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 13.94,
+      "y": 54.49
+    },
+    "runes": 4600,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1034420800",
+    "name": "Glintstone Dragon Adula",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 18.15,
+      "y": 62.96
+    },
+    "runes": 120000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1034450800",
+    "name": "Glintstone Dragon Smarag",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 17.02,
+      "y": 54.28
+    },
+    "runes": 14000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1034480800",
+    "name": "Royal Revenant",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 17.58,
+      "y": 45.0
+    },
+    "runes": 3100,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1035420800",
+    "name": "Omenkiller",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 19.34,
+      "y": 62.69
+    },
+    "runes": 4900,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1035500800",
+    "name": "Royal Knight Loretta",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 19.41,
+      "y": 39.19
+    },
+    "runes": 10000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1036450340",
+    "name": "Death Rite Bird",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 21.71,
+      "y": 53.77
+    },
+    "runes": 7800,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1036480340",
+    "name": "Night's Cavalry",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 22.59,
+      "y": 45.52
+    },
+    "runes": 5600,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1036540800",
+    "name": "Full-Grown Fallingstar Beast",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 23.4,
+      "y": 29.62
+    },
+    "runes": 21000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1037420340",
+    "name": "Deathbird",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 24.47,
+      "y": 61.46
+    },
+    "runes": 6600,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1037460800",
+    "name": "Bell Bearing Hunter",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 24.5,
+      "y": 51.28
+    },
+    "runes": 6000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1037510800",
+    "name": "Ancient Dragon Lansseax",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 26.01,
+      "y": 37.18
+    },
+    "runes": 60000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1037530800",
+    "name": "Demi-Human Queen Maggie",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 25.54,
+      "y": 32.9
+    },
+    "runes": 13000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1038410800",
+    "name": "Adan, Thief of Fire",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 27.67,
+      "y": 66.63
+    },
+    "runes": 3800,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1038510800",
+    "name": "Demi-Human Queen Gilika",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 27.3,
+      "y": 37.49
+    },
+    "runes": 8500,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1039440800",
+    "name": "Tibia Mariner",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 29.42,
+      "y": 57.39
+    },
+    "runes": 4700,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1039500800",
+    "name": "Godefroy the Grafted",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 29.79,
+      "y": 41.21
+    },
+    "runes": 26000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1039540800",
+    "name": "Elemer of the Briar",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 29.71,
+      "y": 28.55
+    },
+    "runes": 24000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1040530800",
+    "name": "Sanguine Noble",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 31.94,
+      "y": 31.17
+    },
+    "runes": 8800,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1041510800",
+    "name": "Tree Sentinel",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 36.46,
+      "y": 37.84
+    },
+    "runes": 20000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1041530800",
+    "name": "Wormface",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 34.73,
+      "y": 31.63
+    },
+    "runes": 10000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1042370800",
+    "name": "Crucible Knight",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 37.3,
+      "y": 75.68
+    },
+    "runes": 2100,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1043300800",
+    "name": "Leonine Misbegotten",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 40.46,
+      "y": 96.07
+    },
+    "runes": 3800,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1043360800",
+    "name": "Flying Dragon Agheel",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 39.81,
+      "y": 78.3
+    },
+    "runes": 5000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1044350800",
+    "name": "Bloodhound Knight Darriwil",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 43.24,
+      "y": 83.42
+    },
+    "runes": 1900,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1044360800",
+    "name": "Mad Pumpkin Head",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 43.6,
+      "y": 78.84
+    },
+    "runes": 1100,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1045520800",
+    "name": "Draconic Tree Sentinel",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 46.34,
+      "y": 34.25
+    },
+    "runes": 50000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1047400800",
+    "name": "Putrid Avatar",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 50.26,
+      "y": 66.94
+    },
+    "runes": 9600,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1048370800",
+    "name": "Decaying Ekzykes",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 53.45,
+      "y": 76.85
+    },
+    "runes": 38000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1048400800",
+    "name": "Mad Pumpkin Head (Hammer)",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 52.73,
+      "y": 69.05
+    },
+    "runes": 6300,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1049380800",
+    "name": "Commander O'Neil",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 56.32,
+      "y": 73.06
+    },
+    "runes": 12000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1049390800",
+    "name": "Nox Monk",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 57.55,
+      "y": 69.89
+    },
+    "runes": 6400,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1049390850",
+    "name": "Battlemage Hugues",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 55.66,
+      "y": 70.85
+    },
+    "runes": 7800,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1049520800",
+    "name": "Black Blade Kindred",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 56.37,
+      "y": 34.13
+    },
+    "runes": 60000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1050560800",
+    "name": "Great Wyrm Theodorix",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 59.37,
+      "y": 23.51
+    },
+    "runes": 180000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1051570800",
+    "name": "Commander Niall",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 62.64,
+      "y": 18.55
+    },
+    "runes": 90000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1052410800",
+    "name": "Flying Dragon Greyll",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 63.34,
+      "y": 64.11
+    },
+    "runes": 80000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1052520800",
+    "name": "Fire Giant",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 65.55,
+      "y": 34.09
+    },
+    "runes": 180000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1053560800",
+    "name": "Roundtable Knight Vyke",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 66.57,
+      "y": 24.87
+    },
+    "runes": 75000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-1248550800",
+    "name": "Night's Cavalry (Glaive)",
+    "realm": "The Lands Between",
+    "map_coords": {
+      "x": 55.06,
+      "y": 26.75
+    },
+    "runes": 84000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2044450800",
+    "name": "Romina, Saint of the Bud",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 19.98,
+      "y": 46.54
+    },
+    "runes": 380000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2044470800",
+    "name": "Rugalea the Great Red Bear",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 20.19,
+      "y": 36.82
+    },
+    "runes": 210000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2045440800",
+    "name": "Ghostflame Dragon",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 28.65,
+      "y": 54.88
+    },
+    "runes": 100000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2046380800",
+    "name": "Dancer of Ranah",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 32.61,
+      "y": 84.38
+    },
+    "runes": 80000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2046400800",
+    "name": "Demi-Human Queen Marigga",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 31.53,
+      "y": 73.09
+    },
+    "runes": 100000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2046410800",
+    "name": "Knight of the Solitary Gaol",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 29.09,
+      "y": 66.98
+    },
+    "runes": 70000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2046450800",
+    "name": "Red Bear",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 35.7,
+      "y": 50.16
+    },
+    "runes": 80000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2047450800",
+    "name": "Black Knight Garrew",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 38.45,
+      "y": 51.26
+    },
+    "runes": 80000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2048440800",
+    "name": "Rellana, Twin Moon Knight",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 43.71,
+      "y": 52.52
+    },
+    "runes": 240000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2049410800",
+    "name": "Jagged Peak Drake",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 52.74,
+      "y": 70.02
+    },
+    "runes": 90000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2049430850",
+    "name": "Black Knight Edredd",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 52.47,
+      "y": 60.13
+    },
+    "runes": 80000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2049450800",
+    "name": "Ralva the Great Red Bear",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 52.33,
+      "y": 46.29
+    },
+    "runes": 180000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2049480800",
+    "name": "Commander Gaius",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 52.75,
+      "y": 33.97
+    },
+    "runes": 230000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2051440800",
+    "name": "Rakshasa",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 62.79,
+      "y": 51.7
+    },
+    "runes": 90000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2052430800",
+    "name": "Jori, Elder Inquisitor",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 67.01,
+      "y": 57.04
+    },
+    "runes": 260000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2054390800",
+    "name": "Bayle the Dread",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 82.95,
+      "y": 77.21
+    },
+    "runes": 490000,
+    "type": "Boss",
+    "defeated": false
+  },
+  {
+    "id": "boss-2054390850",
+    "name": "Ancient Dragon Senessax",
+    "realm": "Shadow of the Erdtree",
+    "map_coords": {
+      "x": 78.69,
+      "y": 77.33
+    },
+    "runes": 200000,
+    "type": "Boss",
+    "defeated": false
+  }
+]

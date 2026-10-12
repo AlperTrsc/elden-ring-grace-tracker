@@ -1,0 +1,122 @@
+================================================================================
+ELDEN RING SITES OF GRACE & EXPLORER TRACKER - GELİŞTİRİCİ NOTLARI
+Tarih: 12 Ekim 2026
+Proje Dizini: C:\Users\alper\.gemini\antigravity-ide\scratch\elden_ring_grace_tracker
+Yerel Sunucu: http://127.0.0.1:8088 (python app.py)
+================================================================================
+
+[1] PROJE AMACI VE YAPILANLARIN ÖZETİ
+--------------------------------------------------------------------------------
+Bu proje, Elden Ring'deki tüm Lütuf Noktalarını (Sites of Grace), Boss arenalarını
+ve kullanıcının kendi ekleyebileceği özel keşif noktalarını (mağara, hazine, NPC vb.)
+etkileşimli bir harita üzerinde takip etmeyi sağlayan tam teşekküllü bir yerel web
+uygulamasıdır.
+
+Kullanıcının talepleri doğrultusunda şu kritik adımlar tamamlandı:
+1. Harita üzerindeki çirkin ızgara sayıları ve kutucuklar tamamen temizlendi.
+2. Haritadaki lütuf konumlarının kayık gözükmesi sorunu oyun içi MSB dünya
+   koordinatları entegre edilerek piksel piksel düzeltildi ve doğrulandı.
+3. Kullanıcının haritaya istediği keşif işaretini (Lütuf, Boss, Zindan, Hazine,
+   NPC, Gizem, Not) ekleyip kaldırabilmesi, düzenleyebilmesi ve katmanları
+   (Lütuflar, Bosslar, Özel Keşifler) tek tıkla filtreleyebilmesi sağlandı.
+
+
+[2] HARİTA GÖRSELLERİ VE SAYILARIN KALDIRILMASI
+--------------------------------------------------------------------------------
+* Eski Durum: Projede başlangıçta kullanılan harita, dahili bir FromSoftware modlama
+  haritasıydı (vawser/ER-Documentation) ve üzerinde devasa ızgara sayıları
+  (örn: 10_07, 11_08 vb.) ile kutucuklar basılıydı.
+* Yeni Durum: Sayısız ve temiz orijinal oyun haritası temin edildi ve optimize edildi:
+  - web/assets/map_lands_between.jpg (ve .webp): 4864 x 4608 px (Orijinal master: 9728 x 9216).
+  - web/assets/map_shadow_realm.webp: 4879 x 5940 px (Gölge Diyarı DLC haritası).
+  - web/assets/map_underground.webp: Yeraltı nehirleri haritası.
+* Not: Ara Topraklar harita en-boy oranı 9728 / 9216 = 1.0555'tir. CSS ve Canvas
+  alanı tam bu orana uygun olarak 2600 x 2463 px olarak ayarlandı.
+
+
+[3] MATEMATİKSEL KOORDİNAT PROJEKSİYONU VE DOĞRULAMA (AFFINE TRANSFORMATION)
+--------------------------------------------------------------------------------
+FromSoftware oyun motorunun harita projeksiyonu şu formüle dayanır:
+- Açık Dünya (m60_XX_YY_02 karoları):
+  worldX = col * 1024 + 512 + localX
+  worldZ = row * 1024 + 512 + localZ
+  px = worldX + OFFSET_X  (OFFSET_X = -7168)
+  py = OFFSET_Y - worldZ  (OFFSET_Y = 16640)
+  
+- Legacy Zindanlar (Stormveil m10, Leyndell m11, Raya Lucaria m14, Farum Azula m13):
+  Oyun içi WorldMapLegacyConvParam tablosuyla önce ana dünyaya ötelenir, ardından
+  aynı formülle harita pikseline dönüştürülür.
+
+- Yüzdelik Koordinat Formülü (Harita boyutuna göre):
+  map_x (%) = round((px / 9728.0) * 100, 2)
+  map_y (%) = round((py / 9216.0) * 100, 2)
+
+Doğrulanan Önemli Nirengi Noktaları (Görsel Kırpma ile Doğrulandı):
+* The First Step: X: %38.03, Y: %79.76 -> Başlangıç asansör kapısının tam çıkışı.
+* Church of Elleh: X: %37.69, Y: %78.29 -> Kale harabesinin tam ortası.
+* Gatefront: X: %38.30, Y: %75.19 -> Fırtına kapısı harabelerinin girişi.
+* Stormveil / Godrick: X: %31.86, Y: %70.13 -> Kale avlusu ve boss arenası.
+* Raya Lucaria Grand Library: X: %18.92, Y: %52.28 -> Akademi kubbesinin merkezi.
+* Castle Morne Rampart: X: %44.26, Y: %88.53 -> Ağlayan Yarımada kalesi köprüsü.
+
+
+[4] KEŞFEDİLEBİLİR İÇERİK SİSTEMİ (CUSTOM MARKERS & LAYERS)
+--------------------------------------------------------------------------------
+1. Katman Filtreleri (Harita Üst Çubuğu):
+   - [🌟 Lütuflar]: 408 adet lütuf noktasını haritada gösterir / gizler.
+   - [⚔️ Bosslar]: 141 adet Elden Ring bossunu kırmızı parlayan kılıç ikonuyla gösterir.
+   - [📍 Keşiflerim]: Kullanıcının haritaya kendi eklediği işaretleri gösterir / gizler.
+   - [👁️ Keşfedilmemişler]: Henüz açılmamış / kesilmemiş noktaları filtreler.
+
+2. İşaret Ekleme Akışı:
+   - Kullanıcı "[➕ İşaret Ekle]" butonuna basar.
+   - İmleç hedef artısına (crosshair) dönüşür ve üstte aktif mod bildirim bandı açılır.
+   - Haritada herhangi bir noktaya tıklandığında tık koordinatları (X%, Y%) otomatik
+     hesaplanarak modal açılır.
+   - Modal Alanları:
+     * Başlık (Zorunlu, örn: "Gizli Madenci Mağarası", "Gözyaşı Ağacı")
+     * Kategori (Lütuf, Boss, Zindan, Hazine, NPC, Gizem, Not)
+     * Bölge (En yakın lütfa göre otomatik tahmin edilir)
+     * Renk Seçimi (Altın, Kırmızı, Mavi, Zümrüt, Mor, Turuncu)
+     * Açıklama / Kişisel Notlar
+     * Keşfedildi Durumu
+   - "[Haritaya Kaydet]" butonuna basıldığında hem arayüzde görünür hem de kaydedilir.
+
+3. İşaret Kaldırma ve Yönetim:
+   - Haritadaki özel işarete tıklandığında açılan detay çekmecesinde kırmızı
+     "[🗑️ Haritadan Kaldır / Sil]" butonu bulunur (onay kutusuyla güvenli siler).
+   - "[✏️ İşareti Düzenle]" butonu ile başlık, not veya kategori güncellenebilir.
+   - Üst çubuktaki "[📋 İşaretlerim]" butonu tüm eklenen işaretleri listeler;
+     oradan tek tıkla haritada o konuma odaklanılabilir ("📍 Git") veya silinebilir ("🗑️ Sil").
+
+
+[5] DOSYA YAPISI VE DEPOLAMA
+--------------------------------------------------------------------------------
+C:\Users\alper\.gemini\antigravity-ide\scratch\elden_ring_grace_tracker\
+  ├── app.py                     -> HTTP Sunucusu & REST API (/api/graces, /api/bosses, /api/save)
+  ├── data\
+  │    ├── graces.json           -> 408 lütuf noktası (Türkçe adlar, açıklamalar, kalibre koordinatlar)
+  │    ├── bosses.json           -> 141 boss arenası ve rün ödülleri
+  │    └── user_progress.json    -> Keşifler, favoriler, mağlup bosslar ve özel işaretler
+  └── web\
+       ├── index.html            -> Ana arayüz, harita viewportu, filtreler ve modallar
+       ├── app.js                -> Harita motoru, pin çizimi, koordinat çevirici ve durum yönetimi
+       ├── style.css             -> Koyu tema, parlayan pin animasyonları, modal stilleri
+       └── assets\
+            ├── map_lands_between.jpg / .webp -> Sayısız temiz Ara Topraklar haritası
+            ├── map_shadow_realm.webp        -> Sayısız temiz DLC Gölge Diyarı haritası
+            └── map_underground.webp         -> Yeraltı haritası
+
+
+[6] KENDİME NOTLAR & GELECEKTE EKLENEBİLECEK GELİŞTİRMELER
+--------------------------------------------------------------------------------
+- Yeraltı Haritası (M01): map_underground.webp varlık olarak hazır. İleride
+  diyar butonlarına "Yeraltı (Siofra, Ainsel, Mohgwyn)" sekmesi eklenerek
+  yeraltı lütufları o haritaya özel gösterilebilir.
+- Yol / Rota Çizici: Kullanıcı belirli lütuflar arasında poligon çizgi çekerek
+  hızlı rota planlama özelliği ekleyebilir.
+- Arama Çubuğu: "/" kısayolu doğrudan liste aramasına odaklanıyor; haritada arama
+  için de "Ctrl+F" veya "H" kısayolu atanabilir.
+- Yedekleme: Kullanıcı arayüzde "İlerlemeyi Dışa Aktar" butonuyla JSON formatında
+  yedek alabilir ve başka tarayıcıda "İçe Aktar" yapabilir.
+================================================================================
